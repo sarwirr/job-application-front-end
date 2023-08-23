@@ -1,0 +1,25 @@
+<!-- Job Dashboard -->
+<div class="job-dashboard">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-buttons">
+        <button class="btn" (click)="logout()">Log Out</button>
+        <button class="btn">Profile</button>
+        <button class="btn">Company</button>
+      </div>
+    </nav>
+  
+    <!-- Job List -->
+    <div class="job-list">
+      <h2>{{ title }}</h2>
+      <p>Total Jobs: {{ count }}</p>
+      <ul>
+        <li *ngFor="let job of jobs">
+          <h3>{{ job.title }}</h3>
+          <p>{{ job.description }}</p>
+          <!-- Add other job details you want to display -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  

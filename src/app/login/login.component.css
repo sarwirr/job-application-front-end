@@ -1,0 +1,75 @@
+/* Style for the outer container */
+#logindiv {
+    display: flex;
+    flex-direction: column; /* Changed flex direction to column */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  /* Styles for the text and form container */
+  #textandform {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px; /* Added margin top */
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Styles for the welcome text and header */
+  #welcometext {
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the form inputs and error messages */
+  #loginform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .invalid-feedback {
+    color: red;
+    font-size: 14px;
+  }
+  
+  /* Style for the submit button */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 480px) {
+    #textandform {
+      padding: 10px;
+    }
+    
+    input {
+      font-size: 14px;
+    }
+    
+    button {
+      font-size: 14px;
+    }
+  }
+
+  input.is-invalid {
+    border-color: red;
+  }
