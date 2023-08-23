@@ -11,7 +11,7 @@ import { JobDashboardComponent } from './job-dashboard/job-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatFormFieldControl, MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -25,6 +25,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
+import { UserInterceptor } from './user.interceptor';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CompanylistComponent } from './companylist/companylist.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -37,7 +41,10 @@ export function tokenGetter() {
     AdminPageComponent,
     LoginComponent,
     RegistrationComponent,
-    JobDashboardComponent
+    JobDashboardComponent,
+    NavbarComponent,
+    ProfileComponent,
+    CompanylistComponent
   ],
   imports: [
    
@@ -57,7 +64,16 @@ export function tokenGetter() {
       },
     }), 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UserInterceptor,
+      multi: true
+    },
+    {
+      provide: 'JWT_TOKEN',useValue:'token'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

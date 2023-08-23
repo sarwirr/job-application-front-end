@@ -47,8 +47,13 @@ export class UsersService {
     return user.roles;
   }
 
+  showuser(){
+    const user = JSON.parse(localStorage.getItem('user')|| '{}');  
+    return user;
+  }
+
   finduserbyid(id: any) {
-    return this.http.get(`http://localhost:3000/user/finduserbyid/${id}`);
+    return this.http.get(`http://localhost:3000/user/findUserbyId/${id}`);
   }
 
   findNameOfUserById(id: any ){

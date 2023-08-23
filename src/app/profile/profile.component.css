@@ -1,0 +1,26 @@
+.profile-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .profile-info {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; /* Add margin to push the content to the left */
+  }
+  
+  .profile-info h2 {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+  
+  .profile-info p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+  }
+  

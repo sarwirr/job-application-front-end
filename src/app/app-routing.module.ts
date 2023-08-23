@@ -8,6 +8,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { StaySignedInGuard } from './stay-signed-in.guard';
 import { IsSignedInGuard } from './is-signed-in.guard';
 import { AdminGuardGuard } from './admin.guard';
+import { ProfileComponent } from './profile/profile.component';
+import { CompanylistComponent } from './companylist/companylist.component';
 
 const routes: Routes = [
   { path: '', component : HomeComponent , canActivate : [StaySignedInGuard]},
@@ -15,11 +17,14 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent, canActivate : [StaySignedInGuard]},
   { path: 'jobdashboard', component: JobDashboardComponent ,canActivate: [IsSignedInGuard ]
 },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuardGuard]}
+  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuardGuard]},
+  { path: 'profile', component: ProfileComponent, canActivate: [IsSignedInGuard]},
+  {path: 'companylist', component: CompanylistComponent, canActivate: [IsSignedInGuard]}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [IsSignedInGuard]
 })
 export class AppRoutingModule { }

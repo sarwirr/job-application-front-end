@@ -1,14 +1,10 @@
 <!-- Job Dashboard -->
 <div class="job-dashboard">
     <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="navbar-buttons">
-        <button class="btn" (click)="logout()">Log Out</button>
-        <button class="btn">Profile</button>
-        <button class="btn">Company</button>
-      </div>
-    </nav>
-  
+    <app-navbar *ngIf="showNavbar"></app-navbar>
+    <!-- Your component content here -->
+    
+    
     <!-- Job List -->
     <div class="job-list">
       <h2>{{ title }}</h2>
@@ -17,7 +13,12 @@
         <li *ngFor="let job of jobs">
           <h3>{{ job.title }}</h3>
           <p>{{ job.description }}</p>
+          <p>{{ job.recruiterName }}</p>
+          <p>{{ job.body }}</p>
+          <p>{{ job.pay }}</p>
+          <p>{{ job.type }}</p>
           <!-- Add other job details you want to display -->
+          <button class="btn">Apply</button>
         </li>
       </ul>
     </div>
