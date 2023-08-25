@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Roles } from 'src/roles.enum';
 import { JobService } from 'src/job.service';
 import { CompanyService } from 'src/company.service';
+import { ApplyJobComponent } from '../apply-job/apply-job.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -25,6 +27,7 @@ countnotif =0;
     private us : UsersService,
     private cs :CompanyService,
     private router : Router,
+    public dialog: MatDialog,
     
     
     @Inject('JWT_TOKEN') private token: string) {}
@@ -63,6 +66,17 @@ countnotif =0;
   logout(){
     localStorage.removeItem('token');
     this.router.navigate(['login']);
+  }
+
+  apply(job : any){
+    const dialogRef = this.dialog.open(ApplyJobComponent,{
+      data: job // Pass the company data to the dialog
+    });
+
+dialogRef.afterClosed().subscribe(result => {
+  console.log(`Dialog result: ${result}`);
+});
+
   }
 
 }

@@ -30,6 +30,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CompanylistComponent } from './companylist/companylist.component';
 import { CompanyDescriptionComponent } from './company-description/company-description.component';
+import { ApplyJobComponent } from './apply-job/apply-job.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -47,6 +48,7 @@ export function tokenGetter() {
     ProfileComponent,
     CompanylistComponent,
     CompanyDescriptionComponent,
+    ApplyJobComponent,
     
   ],
   imports: [

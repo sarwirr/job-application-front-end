@@ -1,0 +1,15 @@
+<!-- joblist.component.html -->
+<mat-dialog-content class="mat-typography">
+    <mat-card>
+
+        <h3> Apply to {{ job.title }}</h3>
+        <!-- Other job details -->
+        <mat-card-content> 
+        <input type="file" #fileInput>
+    </mat-card-content>
+
+        <button  mat-raised-button color="primary" (click)="uploadCV(fileInput, job._id)">Upload CV</button>
+        
+    </mat-card>
+  
+</mat-dialog-content>

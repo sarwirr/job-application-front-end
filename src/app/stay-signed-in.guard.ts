@@ -15,7 +15,7 @@ export class StaySignedInGuard implements CanActivate {
     
         const token = localStorage.getItem('token');
         if (token && this.us.isAuthenticated()) {
-            this.router.navigate(['todo']);
+            this.router.navigate(['jobdashboard']);
             return false; 
             }
         return true;
