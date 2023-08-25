@@ -8,9 +8,10 @@ import { UsersService } from 'src/user.service';
 
 export class RegistrationComponent implements OnInit {  
   RegistrationForm: FormGroup = new FormGroup({
-        name: new FormControl(''),
+        firstname: new FormControl(''),
         email: new FormControl(''),
-        password: new FormControl('')
+        password: new FormControl(''),
+        phoneNumber: new FormControl(''),
     });  
     submitted = false;  
     returnUrl: string | undefined;  
@@ -21,9 +22,11 @@ export class RegistrationComponent implements OnInit {
     
     ngOnInit() {
         this.RegistrationForm = this.formBuilder.group({ 
-            name:  new FormControl("",[Validators.required]),
+            firstname:  new FormControl("",[Validators.required]),
+            lastname:  new FormControl("",[Validators.required]),
             email: new FormControl("",[Validators.required]),
-            password: new FormControl("",[Validators.required])
+            password: new FormControl("",[Validators.required]),
+            phoneNumber: new FormControl("",[Validators.required]),
         });
         
         // reset login status    
@@ -44,7 +47,7 @@ export class RegistrationComponent implements OnInit {
             return;    
         }
         
-        this.us.register({ name: this.RegistrationForm.get("name")?.value ,email: this.RegistrationForm.get("email")?.value , password: this.RegistrationForm.get("password")?.value})
+        this.us.register({ firstname: this.RegistrationForm.get("firstname")?.value ,lastname: this.RegistrationForm.get("lastname")?.value,email: this.RegistrationForm.get("email")?.value , password: this.RegistrationForm.get("password")?.value, phoneNumber: this.RegistrationForm.get("phoneNumber")?.value})
             .subscribe(data => {
                 this.error = '';
                 this.router.navigate([this.returnUrl]);

@@ -29,6 +29,7 @@ import { UserInterceptor } from './user.interceptor';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CompanylistComponent } from './companylist/companylist.component';
+import { CompanyDescriptionComponent } from './company-description/company-description.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -44,10 +45,14 @@ export function tokenGetter() {
     JobDashboardComponent,
     NavbarComponent,
     ProfileComponent,
-    CompanylistComponent
+    CompanylistComponent,
+    CompanyDescriptionComponent,
+    
   ],
   imports: [
-   
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,

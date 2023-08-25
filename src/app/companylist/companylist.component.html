@@ -1,13 +1,25 @@
-<app-navbar *ngIf="showNavbar"></app-navbar>
 
+ <div class="company-dashboard">
+    <app-navbar *ngIf="showNavbar"></app-navbar>
     <!-- Job List -->
     <div class="company-list">
-        <ul>
-          <li *ngFor="let company of companies" class="company-card">
-            <h3>{{ company.name }}</h3>
-            <p>{{ company.description }}</p>
-            <button class="btn">Read more</button>
-          </li>
-        </ul>
+
+        <mat-card  *ngFor="let company of companies" class="example-card">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{ company.name }}</mat-card-title>
+              <mat-card-subtitle>Contact <br> {{ company.email}}</mat-card-subtitle>
+              <img mat-card-md-image src="https://cas-asbestos.co.uk/wp-content/uploads/2014/06/dummy-logo.png"  >
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+        
+            
+            Website : {{ company.website }}
+            <br>
+            <button mat-raised-button color="primary" (click)="openCompanyDescription(company)">More</button>
+
+          </mat-card-content>
+        </mat-card>
       </div>
-      
+    </div>

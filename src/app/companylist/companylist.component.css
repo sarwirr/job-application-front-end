@@ -1,39 +1,25 @@
-/* profile.component.css */
-
+/* Apply styles to the company list container */
 .company-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  
-.company-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    width: calc(70% - 20px); /* Adjust the width value here */
-    box-sizing: border-box;
-  }
-  
-  
-  .company-card h3 {
-    font-size: 18px;
-    margin: 5px 0;
-  }
-  
-  .company-card p {
-    font-size: 14px;
-    margin: 5px 0;
-    color: #555;
-  }
-  
-  .company-card .btn {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
+  display: flex; /* or use 'grid' for grid layout */
+  flex-wrap: wrap; /* or 'grid-template-columns' for grid layout */
+  gap: 20px; /* Space between cards */
+  max-width: 1200px; /* Limit the width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  overflow: auto; /* Enable scrolling if necessary */
+  margin-top: 10px;
+}
+
+/* Limit the width of each individual card */
+.example-card {
+  width: 300px; /* Adjust the width as needed */
+  max-width: 100%; /* Ensure responsiveness */
+}
+
+/* Optional: Adjust other card styling as needed */
+.example-card mat-card-header {
+  background-color: #444444;
+}
+
+.example-card mat-card-content {
+  padding: 16px;
+}

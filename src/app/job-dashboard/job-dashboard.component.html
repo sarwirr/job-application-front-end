@@ -5,22 +5,29 @@
     <!-- Your component content here -->
     
     
+      <p>Total Jobs: {{ count }}</p>
     <!-- Job List -->
     <div class="job-list">
-      <h2>{{ title }}</h2>
-      <p>Total Jobs: {{ count }}</p>
-      <ul>
-        <li *ngFor="let job of jobs">
-          <h3>{{ job.title }}</h3>
-          <p>{{ job.description }}</p>
-          <p>{{ job.recruiterName }}</p>
-          <p>{{ job.body }}</p>
-          <p>{{ job.pay }}</p>
-          <p>{{ job.type }}</p>
-          <!-- Add other job details you want to display -->
-          <button class="btn">Apply</button>
-        </li>
-      </ul>
-    </div>
+    
+      <mat-card  *ngFor="let job of jobs" class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ job.title }}</mat-card-title>
+            <mat-card-subtitle>Company <br> {{job.recruiterName }}</mat-card-subtitle>
+            <img mat-card-md-image src="https://cas-asbestos.co.uk/wp-content/uploads/2014/06/dummy-logo.png"  >
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          {{ job.description }}
+          <br>
+          {{ job.pay }}
+          <br>
+          {{ job.type }}
+          <br>
+          <button mat-raised-button color="primary">Apply</button>
+          <button mat-raised-button color="primary">Save</button>
+        </mat-card-content>
+      </mat-card>
+
   </div>
   
